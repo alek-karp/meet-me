@@ -6,6 +6,7 @@ import {
 	ImageCard,
 	ProjectCard,
 } from "@/components/card-variants";
+import { currentBook, nextBook, recentBook } from "@/lib/books";
 import { links } from "@/lib/links";
 
 type CardItem = {
@@ -97,11 +98,11 @@ const cards: CardItem[] = [
 		title: "Books",
 		visual: (
 			<BookCard
-				spineColor="bg-stone-800"
-				spineLabel="PRAGMATIC"
+				spineColor={currentBook.spineColor}
+				spineLabel={currentBook.spineLabel}
 				status="Reading"
-				title="The Pragmatic Programmer"
-				author="David Thomas & Andrew Hunt"
+				title={currentBook.title}
+				author={currentBook.author}
 			/>
 		),
 	},
@@ -199,11 +200,25 @@ const cards: CardItem[] = [
 		title: "Next up",
 		visual: (
 			<BookCard
-				spineColor="bg-blue-900"
-				spineLabel="DUNE"
+				spineColor={nextBook.spineColor}
+				spineLabel={nextBook.spineLabel}
 				status="Up next"
-				title="Dune"
-				author="Frank Herbert"
+				title={nextBook.title}
+				author={nextBook.author}
+			/>
+		),
+	},
+	{
+		id: 11,
+		category: "Reading",
+		title: "Recently read",
+		visual: (
+			<BookCard
+				spineColor={recentBook.spineColor}
+				spineLabel={recentBook.spineLabel}
+				status="Read"
+				title={recentBook.title}
+				author={recentBook.author}
 			/>
 		),
 	},
