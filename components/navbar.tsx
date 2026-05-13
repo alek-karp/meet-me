@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { links } from "@/lib/links";
 
 export function Navbar() {
 	return (
@@ -31,7 +32,7 @@ export function Navbar() {
 			</nav>
 			<nav className="flex items-center gap-5">
 				<a
-					href="https://github.com/alekkarp"
+					href={links.github}
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -39,18 +40,12 @@ export function Navbar() {
 					GitHub
 				</a>
 				<a
-					href="https://twitter.com/"
+					href={links.twitter}
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-sm text-muted-foreground hover:text-foreground transition-colors"
 				>
 					Twitter
-				</a>
-				<a
-					href="mailto:aleksander.karp2000@gmail.com"
-					className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-				>
-					Email
 				</a>
 			</nav>
 		</header>

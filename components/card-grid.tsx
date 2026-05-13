@@ -303,18 +303,6 @@ const fullWidthCards: CardItem[] = [
 							<span className="text-stone-900 font-medium">Warsaw</span>
 						</p>
 					</div>
-					<div className="flex items-start gap-2">
-						<span className="text-base mt-0.5">✉️</span>
-						<p className="text-sm text-stone-600">
-							Open to interesting projects —{" "}
-							<a
-								href={links.email}
-								className="text-stone-900 font-medium underline underline-offset-2"
-							>
-								say hi
-							</a>
-						</p>
-					</div>
 				</div>
 			</div>
 		),
@@ -451,41 +439,6 @@ const fullWidthCards: CardItem[] = [
 			</div>
 		),
 	},
-	{
-		id: 108,
-		category: "Projects",
-		title: "Open source",
-		rowSpan: 2,
-		visual: (
-			<div className="bg-[#0d1117] rounded-xl p-6 h-full">
-				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-4">
-					GitHub activity
-				</span>
-				<div className="grid grid-cols-12 gap-1">
-					{[
-						0, 1, 0, 2, 1, 0, 3, 1, 0, 2, 1, 4, 0, 1, 2, 0, 3, 1, 0, 2, 1, 0, 4,
-						2, 0, 1, 3, 0, 2, 1, 0, 2, 1, 4, 0, 1, 2, 1, 0, 3, 1, 0, 2, 4, 1, 0,
-						1, 2, 0, 3, 1, 2, 0, 1, 4, 0, 2, 1, 0, 2,
-					].map((level, i) => {
-						const colors = [
-							"bg-stone-800",
-							"bg-green-900",
-							"bg-green-700",
-							"bg-green-500",
-							"bg-green-400",
-						];
-						return (
-							<div
-								// biome-ignore lint/suspicious/noArrayIndexKey: static decorative grid
-								key={i}
-								className={`w-full aspect-square rounded-sm ${colors[level]}`}
-							/>
-						);
-					})}
-				</div>
-			</div>
-		),
-	},
 ];
 
 export function FullWidthCards() {
@@ -514,6 +467,34 @@ export function FullWidthCards() {
 					<div className="min-h-0 flex-1">{card.visual}</div>
 				</div>
 			))}
+		</div>
+	);
+}
+
+export function GitHubActivityCard() {
+	return (
+		<div>
+			<div className="flex items-center justify-between mb-1.5 px-0.5">
+				<span className="text-xs text-muted-foreground">
+					Projects · Open source
+				</span>
+				<a href={links.github} target="_blank" rel="noopener noreferrer">
+					<ArrowUpRight
+						size={14}
+						className="text-muted-foreground hover:text-foreground transition-colors"
+					/>
+				</a>
+			</div>
+			<div className="bg-[#0d1117] rounded-xl p-6">
+				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-4">
+					GitHub activity
+				</span>
+				<img
+					src="http://ghchart.rshah.org/alek-karp"
+					alt="alek-karp's GitHub contribution chart"
+					className="w-full"
+				/>
+			</div>
 		</div>
 	);
 }

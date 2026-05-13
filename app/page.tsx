@@ -1,4 +1,8 @@
-import { CardGrid, FullWidthCards } from "@/components/card-grid";
+import {
+	CardGrid,
+	FullWidthCards,
+	GitHubActivityCard,
+} from "@/components/card-grid";
 import { Hero } from "@/components/hero";
 
 export default function Home() {
@@ -14,6 +18,9 @@ export default function Home() {
 			</div>
 			<div className="px-4 pb-16">
 				<FullWidthCards />
+				<div className="mt-3">
+					<GitHubActivityCard />
+				</div>
 			</div>
 		</div>
 	);
