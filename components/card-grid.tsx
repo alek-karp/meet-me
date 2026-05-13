@@ -1,5 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
+import {
+	BookCard,
+	HobbyCard,
+	ImageCard,
+	ProjectCard,
+} from "@/components/card-variants";
 import { links } from "@/lib/links";
 
 type CardItem = {
@@ -70,24 +76,19 @@ const cards: CardItem[] = [
 		category: "Hobbies",
 		title: "Coffee",
 		visual: (
-			<div className="bg-[#f5f0e8] rounded-xl p-6">
-				<div className="flex gap-2 mb-4">
-					<span className="text-[10px] font-mono font-medium tracking-widest uppercase px-2 py-1 border border-stone-300 rounded text-stone-500">
-						Filter
-					</span>
-					<span className="text-[10px] font-mono font-medium tracking-widest uppercase px-2 py-1 bg-amber-100 border border-amber-200 rounded text-amber-700">
-						Now brewing
-					</span>
-				</div>
-				<p className="font-serif text-4xl leading-tight text-stone-900 mb-2">
-					Ethiopia
-					<br />
-					Yirgacheffe
-				</p>
-				<p className="text-sm text-stone-400 mt-3">
-					Blueberry · Jasmine · Dark chocolate
-				</p>
-			</div>
+			<HobbyCard
+				bg="#f5f0e8"
+				label="Now brewing"
+				labelColor="text-amber-700/70"
+				title={
+					<>
+						Ethiopia
+						<br />
+						Yirgacheffe
+					</>
+				}
+				detail="Blueberry · Jasmine · Dark chocolate"
+			/>
 		),
 	},
 	{
@@ -95,24 +96,13 @@ const cards: CardItem[] = [
 		category: "Reading",
 		title: "Books",
 		visual: (
-			<div className="bg-white border border-stone-100 rounded-xl p-5 flex gap-4 items-start">
-				<div className="w-14 shrink-0 h-20 bg-stone-800 rounded flex items-center justify-center">
-					<span className="text-white text-[9px] font-mono text-center leading-tight px-1">
-						PRAGMA&shy;TIC
-					</span>
-				</div>
-				<div>
-					<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 mb-1 block">
-						Reading
-					</span>
-					<p className="font-serif text-lg leading-snug text-stone-900">
-						The Pragmatic Programmer
-					</p>
-					<p className="text-sm text-stone-400 mt-1">
-						David Thomas & Andrew Hunt
-					</p>
-				</div>
-			</div>
+			<BookCard
+				spineColor="bg-stone-800"
+				spineLabel="PRAGMATIC"
+				status="Reading"
+				title="The Pragmatic Programmer"
+				author="David Thomas & Andrew Hunt"
+			/>
 		),
 	},
 	{
@@ -120,24 +110,7 @@ const cards: CardItem[] = [
 		category: "Projects",
 		title: "This site",
 		visual: (
-			<div className="bg-gradient-to-br from-stone-100 to-stone-200 rounded-xl p-6 overflow-hidden relative">
-				<div className="font-serif text-stone-400 text-sm mb-4">
-					Personal space on the internet
-				</div>
-				<div className="space-y-2">
-					<div className="h-3 bg-stone-300/60 rounded-full w-3/4" />
-					<div className="h-3 bg-stone-300/60 rounded-full w-1/2" />
-					<div className="h-3 bg-stone-300/60 rounded-full w-2/3" />
-				</div>
-				<div className="mt-4 flex gap-2">
-					<div className="h-2 bg-stone-300/60 rounded-full w-12" />
-					<div className="h-2 bg-stone-300/60 rounded-full w-16" />
-					<div className="h-2 bg-stone-300/60 rounded-full w-10" />
-				</div>
-				<div className="absolute bottom-0 right-0 font-serif text-[6rem] leading-none text-stone-300/40 select-none">
-					AK
-				</div>
-			</div>
+			<ProjectCard tagline="Personal space on the internet" initials="AK" />
 		),
 	},
 	{
@@ -225,20 +198,13 @@ const cards: CardItem[] = [
 		category: "Reading",
 		title: "Next up",
 		visual: (
-			<div className="bg-white border border-stone-100 rounded-xl p-5 flex gap-4 items-start">
-				<div className="w-14 shrink-0 h-20 bg-blue-900 rounded flex items-center justify-center">
-					<span className="text-white text-[8px] font-mono text-center leading-tight px-1">
-						DUNE
-					</span>
-				</div>
-				<div>
-					<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 mb-1 block">
-						Up next
-					</span>
-					<p className="font-serif text-lg leading-snug text-stone-900">Dune</p>
-					<p className="text-sm text-stone-400 mt-1">Frank Herbert</p>
-				</div>
-			</div>
+			<BookCard
+				spineColor="bg-blue-900"
+				spineLabel="DUNE"
+				status="Up next"
+				title="Dune"
+				author="Frank Herbert"
+			/>
 		),
 	},
 ];
@@ -250,30 +216,17 @@ const fullWidthCards: CardItem[] = [
 		title: "Photography",
 		rowSpan: 2,
 		visual: (
-			<div className="bg-[#1a1a18] rounded-xl p-6 relative overflow-hidden h-full">
-				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-3">
-					Film · Kodak Gold 200
-				</span>
-				<p className="font-serif text-3xl text-stone-200 leading-snug mt-4">
-					Shooting film,
-					<br />
-					slowly.
-				</p>
-				<p className="text-sm text-stone-500 mt-4 leading-relaxed">
-					Shooting 35mm slows me down in the best way — one roll, 36 frames, no
-					deleting.
-				</p>
-				<div className="absolute bottom-6 right-4 flex gap-1">
-					{["bg-amber-900/40", "bg-stone-700/40", "bg-amber-700/40"].map(
-						(c) => (
-							<div
-								key={c}
-								className={`w-10 h-20 rounded ${c} border border-white/5`}
-							/>
-						),
-					)}
-				</div>
-			</div>
+			<ImageCard
+				label="Film · Kodak Gold 200"
+				title={
+					<>
+						Shooting film,
+						<br />
+						slowly.
+					</>
+				}
+				description="Shooting 35mm slows me down in the best way — one roll, 36 frames, no deleting."
+			/>
 		),
 	},
 	{
