@@ -4,7 +4,6 @@ import {
 	GitHubActivityCard,
 } from "@/components/card-grid";
 import { Hero } from "@/components/hero";
-import { PhotoGrid } from "@/components/photo-grid";
 
 export default function Home() {
 	return (
@@ -19,7 +18,6 @@ export default function Home() {
 			</div>
 			<div className="px-4 pb-16">
 				<FullWidthCards />
-				<PhotoGrid />
 				<div className="mt-3">
 					<GitHubActivityCard />
 				</div>

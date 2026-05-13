@@ -171,6 +171,20 @@ const cards: CardItem[] = [
 		),
 	},
 	{
+		id: 10,
+		category: "Reading",
+		title: "Next up",
+		visual: (
+			<BookCard
+				spineColor={nextBook.spineColor}
+				spineLabel={nextBook.spineLabel}
+				status="Up next"
+				title={nextBook.title}
+				author={nextBook.author}
+			/>
+		),
+	},
+	{
 		id: 9,
 		category: "Hobbies",
 		title: "Plants",
@@ -192,20 +206,6 @@ const cards: CardItem[] = [
 					))}
 				</div>
 			</div>
-		),
-	},
-	{
-		id: 10,
-		category: "Reading",
-		title: "Next up",
-		visual: (
-			<BookCard
-				spineColor={nextBook.spineColor}
-				spineLabel={nextBook.spineLabel}
-				status="Up next"
-				title={nextBook.title}
-				author={nextBook.author}
-			/>
 		),
 	},
 	{
@@ -245,6 +245,19 @@ const fullWidthCards: CardItem[] = [
 		),
 	},
 	{
+		id: 201,
+		category: "Running · Kelowna",
+		title: "Ultramarathon",
+		visual: (
+			<ImageCard
+				label="Running · Kelowna"
+				title="Ultramarathon"
+				description="Somewhere in the mountains, regretting everything."
+				imageSrc="/photos/kelowna_ultramarathon.webp"
+			/>
+		),
+	},
+	{
 		id: 102,
 		category: "Now",
 		title: "Status",
@@ -272,24 +285,6 @@ const fullWidthCards: CardItem[] = [
 						</p>
 					</div>
 				</div>
-			</div>
-		),
-	},
-	{
-		id: 103,
-		category: "Hobbies",
-		title: "Climbing",
-		visual: (
-			<div className="bg-[#eef0eb] rounded-xl p-6 h-full">
-				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block mb-3">
-					Bouldering · V5–V6
-				</span>
-				<p className="font-serif text-4xl leading-tight text-stone-800 mb-3">
-					(Plastic)
-					<br />
-					rocks.
-				</p>
-				<p className="text-xs text-stone-400">At the gym 3× a week</p>
 			</div>
 		),
 	},
@@ -325,26 +320,20 @@ const fullWidthCards: CardItem[] = [
 		),
 	},
 	{
-		id: 105,
+		id: 103,
 		category: "Hobbies",
-		title: "Watching",
+		title: "Climbing",
 		visual: (
-			<div className="bg-[#111] rounded-xl p-6 h-full relative overflow-hidden">
-				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-3">
-					Recently watched
+			<div className="bg-[#eef0eb] rounded-xl p-6 h-full">
+				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block mb-3">
+					Bouldering · V5–V6
 				</span>
-				<p className="font-serif text-2xl text-stone-200 leading-snug mb-1">
-					Severance
+				<p className="font-serif text-4xl leading-tight text-stone-800 mb-3">
+					(Plastic)
+					<br />
+					rocks.
 				</p>
-				<p className="text-xs text-stone-500">S2 · Apple TV+</p>
-				<div className="absolute bottom-0 right-0 left-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
-				<div className="absolute bottom-4 left-6 flex gap-1">
-					{[1, 2, 3, 4, 5].map((s) => (
-						<div key={s} className="w-5 h-1 rounded-full bg-stone-200" />
-					))}
-					<div className="w-5 h-1 rounded-full bg-stone-600" />
-					<div className="w-5 h-1 rounded-full bg-stone-600" />
-				</div>
+				<p className="text-xs text-stone-400">At the gym 3× a week</p>
 			</div>
 		),
 	},
@@ -373,6 +362,56 @@ const fullWidthCards: CardItem[] = [
 					))}
 				</div>
 			</div>
+		),
+	},
+	{
+		id: 202,
+		category: "Travel · New York",
+		title: "New York",
+		visual: (
+			<ImageCard
+				label="Travel · New York"
+				title="New York"
+				description=""
+				imageSrc="/photos/new_york.webp"
+			/>
+		),
+	},
+	{
+		id: 105,
+		category: "Hobbies",
+		title: "Watching",
+		visual: (
+			<div className="bg-[#111] rounded-xl p-6 h-full relative overflow-hidden">
+				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-3">
+					Recently watched
+				</span>
+				<p className="font-serif text-2xl text-stone-200 leading-snug mb-1">
+					Severance
+				</p>
+				<p className="text-xs text-stone-500">S2 · Apple TV+</p>
+				<div className="absolute bottom-0 right-0 left-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
+				<div className="absolute bottom-4 left-6 flex gap-1">
+					{[1, 2, 3, 4, 5].map((s) => (
+						<div key={s} className="w-5 h-1 rounded-full bg-stone-200" />
+					))}
+					<div className="w-5 h-1 rounded-full bg-stone-600" />
+					<div className="w-5 h-1 rounded-full bg-stone-600" />
+				</div>
+			</div>
+		),
+	},
+	{
+		id: 203,
+		category: "Travel · San Francisco",
+		title: "San Francisco",
+		visual: (
+			<ImageCard
+				label="Travel · San Francisco"
+				title="San Francisco"
+				description=""
+				imageSrc="/photos/san-francisco.webp"
+			/>
 		),
 	},
 	{
