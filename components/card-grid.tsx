@@ -8,6 +8,7 @@ import {
 } from "@/components/card-variants";
 import { currentBook, nextBook, recentBook } from "@/lib/books";
 import { links } from "@/lib/links";
+import { projects } from "@/lib/projects";
 
 type CardItem = {
 	id: number;
@@ -22,8 +23,8 @@ const cards: CardItem[] = [
 	{
 		id: 1,
 		category: "Projects",
-		title: "Decision Timeline",
-		href: links.github,
+		title: projects[0].title,
+		href: projects[0].href,
 		visual: (
 			<div className="bg-[#0e0e10] rounded-xl p-6 font-mono text-xs leading-6 overflow-hidden">
 				<div className="text-[#666] mb-3">~/projects/decision-timeline</div>
@@ -112,6 +113,18 @@ const cards: CardItem[] = [
 		title: "This site",
 		visual: (
 			<ProjectCard tagline="Personal space on the internet" initials="AK" />
+		),
+	},
+	{
+		id: 12,
+		category: "Projects",
+		title: projects[1].title,
+		href: projects[1].href,
+		visual: (
+			<ProjectCard
+				tagline={projects[1].tagline}
+				initials={projects[1].initials}
+			/>
 		),
 	},
 	{
