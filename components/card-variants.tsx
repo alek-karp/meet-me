@@ -81,6 +81,8 @@ type ImageCardProps = {
 	title: ReactNode;
 	description: string;
 	strips?: string[];
+	imageSrc?: string;
+	rotation?: 0 | 90 | 180 | 270;
 };
 
 export function ImageCard({
@@ -89,22 +91,59 @@ export function ImageCard({
 	title,
 	description,
 	strips = ["bg-amber-900/40", "bg-stone-700/40", "bg-amber-700/40"],
+	imageSrc,
+	rotation = 0,
 }: ImageCardProps) {
+	const needsSwap = rotation === 90 || rotation === 270;
+
 	return (
 		<div
-			className="rounded-xl p-6 relative overflow-hidden h-full"
+			className="rounded-xl relative overflow-hidden h-full"
 			style={{ backgroundColor: bg }}
 		>
-			<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-3">
-				{label}
-			</span>
-			<p className="font-serif text-3xl text-stone-200 leading-snug mt-4">
-				{title}
-			</p>
-			<p className="text-sm text-stone-500 mt-4 leading-relaxed">
-				{description}
-			</p>
-			{strips.length > 0 && (
+			{imageSrc && (
+				// biome-ignore lint/performance/noImgElement: user-uploaded image, rotation correction applied manually
+				<img
+					src={imageSrc}
+					alt={typeof title === "string" ? title : label}
+					style={
+						needsSwap
+							? {
+									position: "absolute",
+									top: "50%",
+									left: "50%",
+									height: "100%",
+									width: "auto",
+									minWidth: "100%",
+									transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
+								}
+							: {
+									position: "absolute",
+									inset: 0,
+									width: "100%",
+									height: "100%",
+									objectFit: "cover",
+									transform: rotation ? `rotate(${rotation}deg)` : undefined,
+								}
+					}
+				/>
+			)}
+			<div className="relative p-6 h-full flex flex-col justify-between bg-gradient-to-t from-black/70 via-transparent to-transparent">
+				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block">
+					{label}
+				</span>
+				<div>
+					<p className="font-serif text-3xl text-stone-100 leading-snug mb-2">
+						{title}
+					</p>
+					{description && (
+						<p className="text-sm text-stone-300 leading-relaxed">
+							{description}
+						</p>
+					)}
+				</div>
+			</div>
+			{!imageSrc && strips.length > 0 && (
 				<div className="absolute bottom-6 right-4 flex gap-1">
 					{strips.map((c) => (
 						<div

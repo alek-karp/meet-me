@@ -1,0 +1,25 @@
+{
+	"photos": [
+		{
+			"filename": "kelowna_ultramarathon.webp",
+			"label": "Running · Kelowna",
+			"title": "Ultramarathon",
+			"description": "Somewhere in the mountains, regretting everything.",
+			"orientation": "portrait"
+		},
+		{
+			"filename": "new_york.webp",
+			"label": "Travel · New York",
+			"title": "New York",
+			"description": "",
+			"orientation": "portrait"
+		},
+		{
+			"filename": "san-francisco.webp",
+			"label": "Travel · San Francisco",
+			"title": "San Francisco",
+			"description": "",
+			"orientation": "portrait"
+		}
+	]
+}
