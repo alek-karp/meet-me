@@ -1,11 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
+import { links } from "@/lib/links";
 
 type CardItem = {
 	id: number;
 	category: string;
 	title: string;
 	href?: string;
+	rowSpan?: 2;
 	visual: ReactNode;
 };
 
@@ -14,7 +16,7 @@ const cards: CardItem[] = [
 		id: 1,
 		category: "Projects",
 		title: "Decision Timeline",
-		href: "https://github.com/alekkarp",
+		href: links.github,
 		visual: (
 			<div className="bg-[#0e0e10] rounded-xl p-6 font-mono text-xs leading-6 overflow-hidden">
 				<div className="text-[#666] mb-3">~/projects/decision-timeline</div>
@@ -167,20 +169,17 @@ const cards: CardItem[] = [
 		category: "Listening",
 		title: "Music",
 		visual: (
-			<div className="bg-[#0f0f0f] rounded-xl p-5 flex gap-4 items-center">
-				<div className="w-14 h-14 shrink-0 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-900 flex items-center justify-center">
-					<span className="text-2xl">♪</span>
-				</div>
-				<div className="overflow-hidden">
-					<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-1">
-						Now playing
-					</span>
-					<p className="text-sm font-medium text-stone-200 truncate">
-						Four Tet
-					</p>
-					<p className="text-xs text-stone-500 truncate">Pause</p>
-				</div>
-			</div>
+			<iframe
+				title="Spotify player"
+				style={{ borderRadius: 12 }}
+				src="https://open.spotify.com/embed/track/5B4bDsnAtPF1gb30IFQhgw?utm_source=generator&theme=0"
+				width="100%"
+				height="152"
+				frameBorder="0"
+				allowFullScreen
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			/>
 		),
 	},
 	{
@@ -249,22 +248,27 @@ const fullWidthCards: CardItem[] = [
 		id: 101,
 		category: "Hobbies",
 		title: "Photography",
+		rowSpan: 2,
 		visual: (
-			<div className="bg-[#1a1a18] rounded-xl p-6 relative overflow-hidden h-48">
+			<div className="bg-[#1a1a18] rounded-xl p-6 relative overflow-hidden h-full">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-3">
 					Film · Kodak Gold 200
 				</span>
-				<p className="font-serif text-2xl text-stone-200 leading-snug">
+				<p className="font-serif text-3xl text-stone-200 leading-snug mt-4">
 					Shooting film,
 					<br />
 					slowly.
 				</p>
-				<div className="absolute bottom-4 right-4 flex gap-1">
+				<p className="text-sm text-stone-500 mt-4 leading-relaxed">
+					Shooting 35mm slows me down in the best way — one roll, 36 frames, no
+					deleting.
+				</p>
+				<div className="absolute bottom-6 right-4 flex gap-1">
 					{["bg-amber-900/40", "bg-stone-700/40", "bg-amber-700/40"].map(
 						(c) => (
 							<div
 								key={c}
-								className={`w-10 h-14 rounded ${c} border border-white/5`}
+								className={`w-10 h-20 rounded ${c} border border-white/5`}
 							/>
 						),
 					)}
@@ -277,7 +281,7 @@ const fullWidthCards: CardItem[] = [
 		category: "Now",
 		title: "Status",
 		visual: (
-			<div className="bg-stone-50 border border-stone-100 rounded-xl p-6 h-48">
+			<div className="bg-stone-50 border border-stone-100 rounded-xl p-6 h-full">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block mb-4">
 					What I'm up to
 				</span>
@@ -304,7 +308,7 @@ const fullWidthCards: CardItem[] = [
 						<p className="text-sm text-stone-600">
 							Open to interesting projects —{" "}
 							<a
-								href="mailto:aleksander.karp2000@gmail.com"
+								href={links.email}
 								className="text-stone-900 font-medium underline underline-offset-2"
 							>
 								say hi
@@ -320,7 +324,7 @@ const fullWidthCards: CardItem[] = [
 		category: "Hobbies",
 		title: "Climbing",
 		visual: (
-			<div className="bg-[#eef0eb] rounded-xl p-6 h-48">
+			<div className="bg-[#eef0eb] rounded-xl p-6 h-full">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block mb-3">
 					Bouldering · V5–V6
 				</span>
@@ -338,7 +342,7 @@ const fullWidthCards: CardItem[] = [
 		category: "Stack",
 		title: "Tools",
 		visual: (
-			<div className="bg-white border border-stone-100 rounded-xl p-6 h-48">
+			<div className="bg-white border border-stone-100 rounded-xl p-6 h-full">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block mb-4">
 					Day to day
 				</span>
@@ -369,7 +373,7 @@ const fullWidthCards: CardItem[] = [
 		category: "Hobbies",
 		title: "Watching",
 		visual: (
-			<div className="bg-[#111] rounded-xl p-6 h-48 relative overflow-hidden">
+			<div className="bg-[#111] rounded-xl p-6 h-full relative overflow-hidden">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-3">
 					Recently watched
 				</span>
@@ -393,7 +397,7 @@ const fullWidthCards: CardItem[] = [
 		category: "Setup",
 		title: "Desk",
 		visual: (
-			<div className="bg-stone-50 border border-stone-100 rounded-xl p-6 h-48">
+			<div className="bg-stone-50 border border-stone-100 rounded-xl p-6 h-full">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block mb-4">
 					Hardware
 				</span>
@@ -420,7 +424,7 @@ const fullWidthCards: CardItem[] = [
 		category: "Links",
 		title: "Internet finds",
 		visual: (
-			<div className="bg-white border border-stone-100 rounded-xl p-6 h-48">
+			<div className="bg-white border border-stone-100 rounded-xl p-6 h-full">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-400 block mb-4">
 					Things worth reading
 				</span>
@@ -451,8 +455,9 @@ const fullWidthCards: CardItem[] = [
 		id: 108,
 		category: "Projects",
 		title: "Open source",
+		rowSpan: 2,
 		visual: (
-			<div className="bg-[#0d1117] rounded-xl p-6 h-48">
+			<div className="bg-[#0d1117] rounded-xl p-6 h-full">
 				<span className="text-[10px] font-mono tracking-widest uppercase text-stone-500 block mb-4">
 					GitHub activity
 				</span>
@@ -485,10 +490,13 @@ const fullWidthCards: CardItem[] = [
 
 export function FullWidthCards() {
 	return (
-		<div className="grid grid-cols-4 gap-3">
+		<div className="grid grid-cols-4 auto-rows-[200px] gap-3">
 			{fullWidthCards.map((card) => (
-				<div key={card.id}>
-					<div className="flex items-center justify-between mb-1.5 px-0.5">
+				<div
+					key={card.id}
+					className={`flex flex-col${card.rowSpan === 2 ? " row-span-2" : ""}`}
+				>
+					<div className="flex items-center justify-between mb-1.5 px-0.5 shrink-0">
 						<span className="text-xs text-muted-foreground">
 							{card.category} · {card.title}
 						</span>
@@ -503,7 +511,7 @@ export function FullWidthCards() {
 							<ArrowUpRight size={14} className="text-muted-foreground/30" />
 						)}
 					</div>
-					{card.visual}
+					<div className="min-h-0 flex-1">{card.visual}</div>
 				</div>
 			))}
 		</div>
