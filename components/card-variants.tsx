@@ -158,7 +158,7 @@ export function ImageCard({
 }
 
 // ─── Book Card ────────────────────────────────────────────────────────────────
-// White card with a coloured spine on the left and title / author on the right.
+// White card with a large book cover centred and title / author below.
 
 type BookCardProps = {
 	spineColor: string;
@@ -176,11 +176,11 @@ export function BookCard({
 	author,
 }: BookCardProps) {
 	return (
-		<div className="bg-white border border-stone-100 rounded-xl p-5 flex gap-4 items-start">
+		<div className="bg-white border border-stone-100 rounded-xl p-5 flex flex-col items-center text-center gap-4">
 			<div
-				className={`w-14 shrink-0 h-20 ${spineColor} rounded flex items-center justify-center`}
+				className={`w-24 h-36 ${spineColor} rounded-sm shadow-md flex items-center justify-center`}
 			>
-				<span className="text-white text-[8px] font-mono text-center leading-tight px-1">
+				<span className="text-white text-[9px] font-mono text-center leading-tight px-2">
 					{spineLabel}
 				</span>
 			</div>
