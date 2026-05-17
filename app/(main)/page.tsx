@@ -6,8 +6,13 @@ import { links } from "@/lib/links";
 import { projects } from "@/lib/projects";
 
 const socials = [
-	{ label: "X", href: links.twitter },
-	{ label: "GitHub", href: links.github },
+	{ label: "X", icon: "/social-icons/x.svg", href: links.twitter },
+	{
+		label: "LinkedIn",
+		icon: "/social-icons/linkedin.svg",
+		href: links.linkedin,
+	},
+	{ label: "GitHub", icon: null, href: links.github },
 ];
 
 export default function Home() {
@@ -40,7 +45,11 @@ export default function Home() {
 							className="text-base"
 						>
 							<a href={s.href} target="_blank" rel="noopener noreferrer">
-								{s.label}
+								{s.icon ? (
+									<img src={s.icon} alt={s.label} className="h-3 w-auto" />
+								) : (
+									s.label
+								)}
 								<ArrowUpRight size={10} className="opacity-50" />
 							</a>
 						</Badge>
