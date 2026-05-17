@@ -39,6 +39,9 @@ yarn-error.log*
 # claude memory
 /memory
 
+# playwright mcp output
+/.playwright-mcp/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
