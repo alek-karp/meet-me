@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { links } from "@/lib/links";
 import { projects } from "@/lib/projects";
 
@@ -14,10 +15,14 @@ export default function Home() {
 			<div className="max-w-[580px] w-full mx-auto px-6 flex flex-col gap-8">
 				{/* Avatar + Name + Role */}
 				<div className="flex items-center gap-4">
-					<div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-						<span className="text-xs font-medium text-zinc-500 tracking-tight">
-							AK
-						</span>
+					<div className="w-12 h-12 rounded-full overflow-hidden border border-zinc-800 shrink-0">
+						<Image
+							src="/photos/new_york.webp"
+							alt="Alek Karp"
+							width={48}
+							height={48}
+							className="w-full h-full object-cover object-center scale-[2] origin-center"
+						/>
 					</div>
 					<div>
 						<h1 className="text-lg font-semibold text-zinc-100 leading-tight">
