@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 import { links } from "@/lib/links";
 import { projects } from "@/lib/projects";
 
@@ -33,18 +34,23 @@ export default function Home() {
 				</div>
 
 				{/* Social links */}
-				<div className="flex items-center gap-5">
+				<div className="flex items-center gap-2">
 					{socials.map((s) => (
-						<a
+						<Badge
 							key={s.label}
-							href={s.href}
-							target={s.href.startsWith("mailto") ? undefined : "_blank"}
-							rel="noopener noreferrer"
-							className="flex items-center gap-1 text-base text-zinc-600 hover:text-zinc-200 transition-colors"
+							asChild
+							variant="outline"
+							className="text-base"
 						>
-							{s.label}
-							<ArrowUpRight size={11} className="opacity-40" />
-						</a>
+							<a
+								href={s.href}
+								target={s.href.startsWith("mailto") ? undefined : "_blank"}
+								rel="noopener noreferrer"
+							>
+								{s.label}
+								<ArrowUpRight size={10} className="opacity-50" />
+							</a>
+						</Badge>
 					))}
 				</div>
 
@@ -58,26 +64,30 @@ export default function Home() {
 					</p>
 					<p className="text-zinc-400 leading-relaxed text-base">
 						I&apos;ve been building{" "}
-						<a
-							href={projects[0].href}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-zinc-200 underline underline-offset-2 decoration-zinc-700 hover:decoration-zinc-500 transition-colors text-base"
-						>
-							Decision Timeline
-						</a>
-						, a CLI that lets you query git history in natural language — so you
+						<Badge asChild variant="outline" className="align-middle text-base">
+							<a
+								href={projects[0].href}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Decision Timeline
+								<ArrowUpRight size={10} className="opacity-50" />
+							</a>
+						</Badge>{" "}
+						a CLI that lets you query git history in natural language — so you
 						can always find out <span className="text-zinc-200">why</span> a
 						past decision was made. I also built{" "}
-						<a
-							href={projects[1].href}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-zinc-200 underline underline-offset-2 decoration-zinc-700 hover:decoration-zinc-500 transition-colors text-base"
-						>
-							Purple Lotus
-						</a>
-						, a Canadian directory for finding therapists you actually feel good
+						<Badge asChild variant="outline" className="align-middle text-base">
+							<a
+								href={projects[1].href}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Purple Lotus
+								<ArrowUpRight size={10} className="opacity-50" />
+							</a>
+						</Badge>{" "}
+						a Canadian directory for finding therapists you actually feel good
 						about.
 					</p>
 					<p className="text-zinc-400 leading-relaxed text-base">
