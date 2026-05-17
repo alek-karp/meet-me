@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
+import { EmailBadge } from "@/components/email-badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { links } from "@/lib/links";
 import { projects } from "@/lib/projects";
@@ -7,23 +8,21 @@ import { projects } from "@/lib/projects";
 const socials = [
 	{ label: "X", href: links.twitter },
 	{ label: "GitHub", href: links.github },
-	{ label: "Email", href: "mailto:aleksander.karp2000@gmail.com" },
 ];
 
 export default function Home() {
 	return (
 		<div className="h-screen bg-zinc-950 text-zinc-200 flex items-center">
 			<div className="max-w-[580px] w-full mx-auto px-6 flex flex-col gap-8">
-				<div className="flex items-center gap-4">
-					<div className="w-12 h-12 rounded-full overflow-hidden border border-zinc-800 shrink-0">
-						<Image
+				<div className="flex items-center gap-6">
+					<Avatar>
+						<AvatarImage
 							src="/photos/new_york.webp"
 							alt="Alek Karp"
-							width={48}
-							height={48}
-							className="w-full h-full object-cover object-center scale-[2] origin-center"
+							className="scale-[2] origin-center"
 						/>
-					</div>
+						<AvatarFallback>AK</AvatarFallback>
+					</Avatar>
 					<div>
 						<h1 className="text-lg font-semibold text-zinc-100 leading-tight">
 							Alek Karp
@@ -40,16 +39,13 @@ export default function Home() {
 							variant="outline"
 							className="text-base"
 						>
-							<a
-								href={s.href}
-								target={s.href.startsWith("mailto") ? undefined : "_blank"}
-								rel="noopener noreferrer"
-							>
+							<a href={s.href} target="_blank" rel="noopener noreferrer">
 								{s.label}
 								<ArrowUpRight size={10} className="opacity-50" />
 							</a>
 						</Badge>
 					))}
+					<EmailBadge />
 				</div>
 
 				<div className="space-y-3">
