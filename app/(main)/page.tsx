@@ -6,13 +6,19 @@ import { links } from "@/lib/links";
 import { projects } from "@/lib/projects";
 
 const socials = [
-	{ label: "X", icon: "/social-icons/x.svg", href: links.twitter },
+	{
+		label: "X",
+		icon: "/social-icons/x.svg",
+		href: links.twitter,
+		handle: "aleksander_karp",
+	},
 	{
 		label: "LinkedIn",
 		icon: "/social-icons/linkedin.svg",
 		href: links.linkedin,
+		handle: "alek-karp",
 	},
-	{ label: "GitHub", icon: null, href: links.github },
+	{ label: "GitHub", icon: null, href: links.github, handle: "alek-karp" },
 ];
 
 export default function Home() {
@@ -50,6 +56,7 @@ export default function Home() {
 								) : (
 									s.label
 								)}
+								{s.handle && <span className="text-zinc-400">{s.handle}</span>}
 								<ArrowUpRight size={10} className="opacity-50" />
 							</a>
 						</Badge>
