@@ -14,7 +14,6 @@ export default function Home() {
 	return (
 		<div className="h-screen bg-zinc-950 text-zinc-200 flex items-center">
 			<div className="max-w-[580px] w-full mx-auto px-6 flex flex-col gap-8">
-				{/* Avatar + Name + Role */}
 				<div className="flex items-center gap-4">
 					<div className="w-12 h-12 rounded-full overflow-hidden border border-zinc-800 shrink-0">
 						<Image
@@ -33,7 +32,6 @@ export default function Home() {
 					</div>
 				</div>
 
-				{/* Social links */}
 				<div className="flex items-center gap-2">
 					{socials.map((s) => (
 						<Badge
@@ -54,7 +52,6 @@ export default function Home() {
 					))}
 				</div>
 
-				{/* About */}
 				<div className="space-y-3">
 					<p className="text-zinc-400 leading-relaxed text-base">
 						Hey, I&apos;m Alek. I like building things for the web — fast,
