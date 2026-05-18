@@ -109,6 +109,18 @@ export default function Home() {
 						and write about interesting problems.
 					</p>
 				</div>
+
+				<p className="text-zinc-500 text-sm text-center">
+					Right now in Vancouver.{" "}
+					<a
+						href="https://calendar.notion.so/meet/alekkarp/chat"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="underline underline-offset-2 hover:text-zinc-300 transition-colors"
+					>
+						Let&apos;s grab a coffee
+					</a>
+				</p>
 			</div>
 		</div>
 	);
