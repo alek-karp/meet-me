@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const u = "aleksander.karp2000";
@@ -10,12 +10,13 @@ export function EmailBadge() {
 	return (
 		<Badge
 			variant="outline"
-			className="py-1.5 text-base cursor-pointer"
+			className="py-3 text-base cursor-pointer"
 			onClick={() => {
 				window.location.href = `mailto:${u}@${d}`;
 			}}
 		>
-			Email
+			<Mail size={12} />
+			<span className="text-zinc-400">email</span>
 			<ArrowUpRight size={10} className="opacity-50" />
 		</Badge>
 	);
