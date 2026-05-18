@@ -18,7 +18,12 @@ const socials = [
 		href: links.linkedin,
 		handle: "alek-karp",
 	},
-	{ label: "GitHub", icon: null, href: links.github, handle: "alek-karp" },
+	{
+		label: "GitHub",
+		icon: "/social-icons/github.svg",
+		href: links.github,
+		handle: "alek-karp",
+	},
 ];
 
 export default function Home() {
@@ -48,7 +53,7 @@ export default function Home() {
 							key={s.label}
 							asChild
 							variant="outline"
-							className="text-base"
+							className="py-3 text-base"
 						>
 							<a href={s.href} target="_blank" rel="noopener noreferrer">
 								{s.icon ? (
@@ -73,7 +78,11 @@ export default function Home() {
 					</p>
 					<p className="text-zinc-200 leading-relaxed text-base">
 						I&apos;ve been building{" "}
-						<Badge asChild variant="outline" className="align-middle text-base">
+						<Badge
+							asChild
+							variant="outline"
+							className="py-1.5 align-middle text-base"
+						>
 							<a
 								href={projects[0].href}
 								target="_blank"
@@ -86,7 +95,11 @@ export default function Home() {
 						a CLI that lets you query git history in natural language — so you
 						can always find out <span className="text-zinc-200">why</span> a
 						past decision was made. I also built{" "}
-						<Badge asChild variant="outline" className="align-middle text-base">
+						<Badge
+							asChild
+							variant="outline"
+							className="py-1.5 align-middle text-base"
+						>
 							<a
 								href={projects[1].href}
 								target="_blank"

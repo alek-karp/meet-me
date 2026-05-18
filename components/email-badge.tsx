@@ -10,7 +10,7 @@ export function EmailBadge() {
 	return (
 		<Badge
 			variant="outline"
-			className="text-base cursor-pointer"
+			className="py-1.5 text-base cursor-pointer"
 			onClick={() => {
 				window.location.href = `mailto:${u}@${d}`;
 			}}
