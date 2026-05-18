@@ -31,9 +31,9 @@ export default function Home() {
 		<div className="h-screen bg-zinc-950 text-zinc-200 flex items-center">
 			<div className="max-w-[720px] w-full mx-auto px-6 flex flex-col gap-8">
 				<div className="flex items-center gap-6">
-					<Avatar>
+					<Avatar className="after:border-0">
 						<AvatarImage
-							src="/photos/new_york.webp"
+							src="/photos/profile-photo.webp"
 							alt="Alek Karp"
 							className="scale-[2] origin-center"
 						/>
