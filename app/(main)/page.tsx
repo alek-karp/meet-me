@@ -24,7 +24,7 @@ const socials = [
 export default function Home() {
 	return (
 		<div className="h-screen bg-zinc-950 text-zinc-200 flex items-center">
-			<div className="max-w-[580px] w-full mx-auto px-6 flex flex-col gap-8">
+			<div className="max-w-[720px] w-full mx-auto px-6 flex flex-col gap-8">
 				<div className="flex items-center gap-6">
 					<Avatar>
 						<AvatarImage
@@ -65,13 +65,13 @@ export default function Home() {
 				</div>
 
 				<div className="space-y-3">
-					<p className="text-zinc-400 leading-relaxed text-base">
+					<p className="text-zinc-200 leading-relaxed text-base">
 						Hey, I&apos;m Alek. I like building things for the web — fast,
 						thoughtful software that{" "}
 						<span className="text-zinc-200">feels right</span> to use. I care a
 						lot about attention to detail and the gap between good and great.
 					</p>
-					<p className="text-zinc-400 leading-relaxed text-base">
+					<p className="text-zinc-200 leading-relaxed text-base">
 						I&apos;ve been building{" "}
 						<Badge asChild variant="outline" className="align-middle text-base">
 							<a
@@ -99,7 +99,7 @@ export default function Home() {
 						a Canadian directory for finding therapists you actually feel good
 						about.
 					</p>
-					<p className="text-zinc-400 leading-relaxed text-base">
+					<p className="text-zinc-200 leading-relaxed text-base">
 						Outside of code I run long distances, shoot film, and drink too much
 						coffee. I do some <span className="text-zinc-200">reading</span> and{" "}
 						<span className="text-zinc-200">writing</span> as well — always
